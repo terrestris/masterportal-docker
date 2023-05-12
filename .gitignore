@@ -1,0 +1,4 @@
+masterportal
+.env
+nginx/ssl/private/localhost.crt
+nginx/ssl/private/localhost.key
