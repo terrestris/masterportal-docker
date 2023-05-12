@@ -3,24 +3,3 @@ services:
   nginx:
     container_name: nginx
     image: nginx:stable-alpine
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-    ports:
-      - 80:80
-    depends_on:
-      - masterportal-dev-client
-  masterportal-dev-client:
-    container_name: masterportal-client
-    user: "${UID}:${GID}"
-    build:
-      context: ./dev
-      args:
-        USER_UID: ${UID}
-        USER_GID: ${GID}
-        USER_NAME: ${UNAME}
-    ports:
-      - 9001:9001
-    environment:
-      GITUSER: ${GITUSER}
-      TOKEN: ${TOKEN}
-      MASTERPORTAL_VERSION: ${MASTERPORTAL_VERSION}

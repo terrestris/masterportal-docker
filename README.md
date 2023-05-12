@@ -4,18 +4,14 @@ This builds a docker image that runs [Masterportal](https://bitbucket.org/geower
 
 ## Getting the image
 
-### Trusted builds
-
-TODO 🚧 
-
 ### Local builds
 
 #### Development 👩‍💻
 
-1. Adapt MASTERPORTAL_VERSION in `startDev.sh` to your needs, cf. [tags](https://bitbucket.org/geowerkstatt-hamburg/masterportal/src/dev/)
-2. Run `startDev.sh` to set environment variables.
+1. Adapt MASTERPORTAL_VERSION in `setup.sh` to your needs, cf. [tags](https://bitbucket.org/geowerkstatt-hamburg/masterportal/src/dev/)
+2. Run `setup.sh` to set environment variables.
 3. `docker compose build -d`
-4. App runs on `localhost/masterportal`
+4. App runs on `https://localhost`
 
 #### Production
 
