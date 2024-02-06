@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetFeature service="WFS" version="1.1.0" xmlns:app="http://www.deegree.org/de.hh.up" xmlns:wfs="http://www.opengis.net/wfs" xmlns:ogc="http://www.opengis.net/ogc">
+    <wfs:Query typeName="de.hh.up:staatliche_schulen">
+        <ogc:Filter>
+            <ogc:PropertyIsEqualTo>
+                <ogc:PropertyName>de.hh.up:kapitelbezeichnung</ogc:PropertyName>
+                <ogc:Literal>Sonderschulen</ogc:Literal>
+            </ogc:PropertyIsEqualTo>
+        </ogc:Filter>
+    </wfs:Query>
+</wfs:GetFeature>

@@ -1,0 +1,18 @@
+services:
+  nginx:
+    volumes:
+      - ./masterportal/dist:/var/www/html
+      - ./nginx/prod/default.conf:/etc/nginx/templates/default.conf.template
+    ports:
+      - 80:80
+  print:
+    extends:
+      file: common-services.yml
+      service: print
+    restart: unless-stopped
+    healthcheck:
+      test: curl --fail http://localhost:8080/ || exit 1
+      interval: 10s
+      retries: 5
+      start_period: 5s
+      timeout: 10s

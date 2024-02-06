@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  nginx:
+    container_name: ${CONTAINER_NAME_PREFIX}-nginx
+    image: nginx:1.25.3-alpine
+    volumes:
+      - ./nginx/ssl/private/localhost.crt:/etc/nginx/ssl/private/localhost.crt
+      - ./nginx/ssl/private/localhost.key:/etc/nginx/ssl/private/localhost.key
+    depends_on:
+      - print
+    ports:
+      - 443:443
+  print:
+    container_name: ${CONTAINER_NAME_PREFIX}-print
+    image: camptocamp/mapfish_print:3.30
+    volumes:
+      - ./mapfish-print:/usr/local/tomcat/webapps/ROOT/print-apps:Z

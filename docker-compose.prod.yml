@@ -1,7 +1,0 @@
-services:
-  nginx:
-    volumes:
-      - ./masterportal/dist:/var/www/html
-      - ./nginx/prod/default.conf:/etc/nginx/templates/default.conf.template
-    ports:
-      - 80:80

@@ -1,0 +1,38 @@
+{
+  "layout": "A4 Hochformat",
+  "attributes": {
+    "map": {
+      "center": [
+        5,
+        45
+      ],
+      "rotation": 0,
+      "longitudeFirst": true,
+      "layers": [
+        {
+          "geoJson": "file://countries.geojson",
+          "style": {
+            "*": {
+              "symbolizers": [
+                {
+                  "fillColor": "#5E7F99",
+                  "strokeWidth": 1,
+                  "fillOpacity": 1,
+                  "type": "polygon",
+                  "strokeColor": "#CC1D18",
+                  "strokeOpacity": 1
+                }
+              ]
+            },
+            "version": "2"
+          },
+          "type": "geojson"
+        }
+      ],
+      "scale": 100000000,
+      "projection": "EPSG:4326",
+      "dpi": 72
+    },
+    "showLegend": false
+  }
+}
