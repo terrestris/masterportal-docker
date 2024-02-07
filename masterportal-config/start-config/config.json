@@ -93,21 +93,13 @@
             "type": "openConfig"
           },
           {
-            "type": "contact",
-            "serviceId": "80001",
-            "includeSystemInfo": true,
-            "from": [
-              {
-                "email": "lgvgeoportal-hilfe@gv.hamburg.de",
-                "name": "LGVGeoportalHilfe"
-              }
-            ],
-            "to": [
-              {
-                "email": "lgvgeoportal-hilfe@gv.hamburg.de",
-                "name": "LGVGeoportalHilfe"
-              }
-            ]
+            "name": "Karte drucken",
+            "icon": "bi-printer",
+            "type": "print",
+            "printServiceId": "mapfish",
+            "printAppId": "default",
+            "filename": "Ausdruck",
+            "title": "Mein Titel"
           },
           {
             "type": "language"
