@@ -1,5 +1,28 @@
 version: '3.9'
 services:
   nginx:
-    container_name: nginx
-    image: nginx:stable-alpine
+    extends:
+      file: common-services.yml
+      service: nginx
+    volumes:
+      - ./nginx/dev/default.conf:/etc/nginx/templates/default.conf.template
+    depends_on:
+      - masterportal-dev-client
+  print:
+    extends:
+      file: common-services.yml
+      service: print
+    depends_on:
+      - masterportal-dev-client
+  masterportal-dev-client:
+    container_name: ${CONTAINER_NAME_PREFIX}-dev-client
+    build:
+      context: ./masterportal-dev-client
+      args:
+        USER_UID: ${UID}
+        USER_GID: ${GID}
+        USER_NAME: ${UNAME}
+        MASTERPORTAL_VERSION: ${MASTERPORTAL_VERSION}
+    volumes:
+      - ./masterportal-code:/home/${UNAME}/masterportal
+      - ./masterportal-config:/home/${UNAME}/masterportal/portal/

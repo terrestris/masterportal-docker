@@ -1,0 +1,14 @@
+[
+  {
+    "id": "11",
+    "name": "Komoot Photon Suche",
+    "url": "https://photon.komoot.io/api/?",
+    "typ": "WFS"
+  },
+  {
+    "id": "mapfish",
+    "name": "Mapfish Print Servlet",
+    "url": "https://localhost/print/",
+    "typ": "Print"
+  }
+]

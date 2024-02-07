@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="842" pageHeight="1191" columnWidth="786" leftMargin="28" rightMargin="28" topMargin="28" bottomMargin="28" uuid="9a3e59f5-6675-48cf-ad74-9c42b5a5b290">
+	<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="title" class="java.lang.String"/>
+	<parameter name="mapContext" class="org.mapfish.print.attribute.map.MapfishMapContext" isForPrompting="false"/>
+	<parameter name="mapSubReport" class="java.lang.String"/>
+	<parameter name="northArrowSubReport" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="scalebarSubReport" class="java.lang.String" isForPrompting="false"/>
+	<title>
+		<band height="1135" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement x="0" y="0" width="786" height="1135" uuid="8bdbbaa1-dbf0-448d-8888-4af3f4bfeebc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Dotted"/>
+				</box>
+				<subreport>
+					<reportElement x="0" y="0" width="786" height="1135" uuid="b6d0f0c7-4866-4628-a3e9-5a4d9074c9b6">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<subreportExpression><![CDATA[$P{mapSubReport}]]></subreportExpression>
+				</subreport>
+			</frame>
+			<textField>
+				<reportElement x="734" y="13" width="50" height="50" forecolor="#000000" uuid="e1618bbd-1984-43a1-9eff-f2e250e87bbd"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" rotation="Right">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[String.format("Rechts: %.2f", $P{mapContext}.toReferencedEnvelope().getMaxX())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="1071" width="50" height="50" forecolor="#000000" uuid="61aa0523-3691-4efc-8782-dd88917f11d0"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center" rotation="Left">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[String.format("Rechts: %.2f", $P{mapContext}.toReferencedEnvelope().getMinX())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="726" y="2" width="50" height="10" forecolor="#000000" uuid="c5548726-01ce-4129-9c67-4bdddddd8db0"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[String.format("Hoch: %.2f", $P{mapContext}.toReferencedEnvelope().getMaxY())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="1123" width="50" height="10" forecolor="#000000" uuid="f51bd779-2a7d-427c-a535-2c69f77fdc0f"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[String.format("Hoch: %.2f", $P{mapContext}.toReferencedEnvelope().getMinY())]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement positionType="FixRelativeToBottom" x="585" y="956" width="200" height="178" forecolor="#FFFFFF" backcolor="#FFFFFF" uuid="d1a0e869-3a1f-4e6b-860c-97dd022f928a">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+				</reportElement>
+				<box padding="0">
+					<pen lineWidth="0.0"/>
+				</box>
+				<rectangle>
+					<reportElement x="0" y="0" width="200" height="178" uuid="251ce013-ab95-47eb-9fc6-cc6ad6fd54ca">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+				</rectangle>
+				<rectangle>
+					<reportElement x="0" y="0" width="200" height="60" uuid="04ada247-db15-4c3a-a441-ba6d92062717">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+				</rectangle>
+				<image>
+					<reportElement x="90" y="11" width="100" height="30" uuid="b8d754e8-9fa1-485e-be35-80f85442a4ae">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<imageExpression><![CDATA["logo_terrestris.png"]]></imageExpression>
+				</image>
+				<subreport>
+					<reportElement x="30" y="11" width="30" height="28" uuid="bf0f6102-3674-4575-8363-360282932b7b">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<subreportExpression><![CDATA[$P{northArrowSubReport}]]></subreportExpression>
+				</subreport>
+				<textField>
+					<reportElement x="100" y="40" width="100" height="20" forecolor="#000000" uuid="d7f0d999-f8ca-42ab-bf79-65b1b506a60a">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box topPadding="5" leftPadding="8" bottomPadding="5" rightPadding="5"/>
+					<textElement textAlignment="Right" verticalAlignment="Bottom">
+						<font size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Auszug vom " + new SimpleDateFormat("dd.MM.yyyy").format(new Date())]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="40" width="100" height="20" forecolor="#000000" uuid="3e8fe855-fb78-40b7-a73a-5c507d7e83d9">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box topPadding="5" leftPadding="8" bottomPadding="5" rightPadding="5"/>
+					<textElement textAlignment="Left" verticalAlignment="Bottom">
+						<font size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[String.format("Maßstab 1:%.0f", $P{mapContext}.getRoundedScaleDenominator())]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="60" width="200" height="36" forecolor="#000000" uuid="84d21361-7ba6-49c3-afec-0435db1f6ee6">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box topPadding="3" leftPadding="5" bottomPadding="5" rightPadding="5">
+						<pen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
+				</textField>
+				<subreport>
+					<reportElement x="10" y="152" width="179" height="25" uuid="7978dff4-5d86-4e28-b7dd-6b5077586786">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<subreportExpression><![CDATA[$P{scalebarSubReport}]]></subreportExpression>
+				</subreport>
+				<textField>
+					<reportElement x="0" y="110" width="200" height="58" forecolor="#000000" uuid="842f9fe1-d04e-4af1-ae4e-617293661571">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+					<textElement textAlignment="Center" markup="html">
+						<font size="6"/>
+					</textElement>
+					<textFieldExpression><![CDATA["© Stadt bonn, © FD Kataster, Kreis Recklinghausen (Lizenz: dl-de/zero-2-0), © Geobasis NRW (Lizenz: dl-de/zero-2-0), © LaNUV NRW (Lizenz: dl-de/by-2-0), © Regionalverband Ruhr und Kooperationspartner (Lizenz: dl-de/by-2-0), © OpenStreetMap - Mitwirkende (ODbL)"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="96" width="200" height="14" forecolor="#000000" uuid="5547f67a-f349-4344-9c9c-000b5aca52f3">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box topPadding="3" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<textElement textAlignment="Center" verticalAlignment="Top" markup="html">
+						<font size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA["<b>Geoportal bonn</b>"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+</jasperReport>

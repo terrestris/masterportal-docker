@@ -6,7 +6,9 @@ set -e
 USER_ID=$(id -u)
 GROUP_ID=$(id -g)
 USER_NAME=$(whoami)
-MASTERPORTAL_VERSION=v2.33.0
+MASTERPORTAL_VERSION=v3.0.0-beta2
+MASTERPORTAL_DEV_DIR=masterportal-code
+CONTAINER_NAME_PREFIX=projectname
 
 rm -f .env
 touch .env
@@ -18,18 +20,20 @@ echo "UID=${USER_ID}"  >> $SCRIPT_DIR/$ENV_FILE
 echo "GID=${GROUP_ID}" >> $SCRIPT_DIR/$ENV_FILE
 echo "UNAME=${USER_NAME}" >> $SCRIPT_DIR/$ENV_FILE
 echo "MASTERPORTAL_VERSION=${MASTERPORTAL_VERSION}" >> $SCRIPT_DIR/$ENV_FILE
+echo "CONTAINER_NAME_PREFIX=${CONTAINER_NAME_PREFIX}" >> $SCRIPT_DIR/$ENV_FILE
 
-if [ ! -d "masterportal" ]; then
-    git clone https://geowerkstatt@bitbucket.org/geowerkstatt-hamburg/masterportal.git masterportal
+if [ ! -d "$MASTERPORTAL_DEV_DIR" ]; then
+    git clone https://geowerkstatt@bitbucket.org/geowerkstatt-hamburg/masterportal.git $MASTERPORTAL_DEV_DIR
 fi
 
-cd masterportal
+cd $MASTERPORTAL_DEV_DIR
 # checkout version tag
 git checkout $MASTERPORTAL_VERSION
 # install dependencies
+# TODO automatically use correct node version using nvm use (.nvmrc needed)
 npm i
 
-# # disable host check in webpack in order to get apache proxy working together with webpack
+# # disable host check in webpack in order to get nginx proxy working together with webpack
 sed -i 's;port: 9001,;port: 9001,disableHostCheck: true,;' devtools/webpack.dev.js
 # # disable https to get hot reload running again
 sed -i 's;https: true,;https: false,;' devtools/webpack.dev.js
