@@ -37,11 +37,13 @@ npm i
 sed -i 's;port: 9001,;port: 9001,disableHostCheck: true,;' devtools/webpack.dev.js
 # # disable https to get hot reload running again
 sed -i 's;https: true,;https: false,;' devtools/webpack.dev.js
+cd ..
+
+# copy configurations
+cp -r masterportal-config/* $MASTERPORTAL_DEV_DIR/portal/
 
 # create certificate for local development
-cd ..
 printf "Create the SSL certificate\n"
-
 openssl req \
   -config ./nginx/ssl/localhost.conf \
   -batch \

@@ -5,17 +5,17 @@ This builds a docker image that runs [Masterportal](https://bitbucket.org/geower
 ### Development 👩‍💻
 
 **Requirements:**
-- `node`
+- `NodeJS`
+- `Docker Engine`
 
 1. Adapt MASTERPORTAL_VERSION in `setup.sh` to your needs, cf. [tags](https://bitbucket.org/geowerkstatt-hamburg/masterportal/src/dev/)
 2. Run `setup.sh` to set environment variables.
 3. `docker compose build -d`
-4. App runs on `https://localhost/portal/start-config`, print servlet: `https://localhost/print/`
+4. App runs on `https://localhost/portal/start-config`, print servlet: `https://localhost/print/default/capabilities.json`
 
 ### Production Example
 
-- TODO: 🚧
-<!-- integrate build mechanism of masterportal resources in workflow -->
+See `docker-compose-prod.yml`. The build resources of masterportal are needed for production. It's recommended to use CI/CD for the build process. Else it can be done manually (`npm run build`).
 
 ## Environment variables
 - `MASTERPORTAL_VERSION`= Tag of the Masterportal version you would like to build.
