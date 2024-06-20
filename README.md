@@ -8,10 +8,11 @@ This builds a docker image that runs [Masterportal](https://bitbucket.org/geower
 - `NodeJS`
 - `Docker Engine`
 
-1. Adapt MASTERPORTAL_VERSION in `setup.sh` to your needs, cf. [tags](https://bitbucket.org/geowerkstatt-hamburg/masterportal/src/dev/)
-2. Run `setup.sh` to set environment variables.
-3. `docker compose build -d`
-4. App runs on `https://localhost/portal/start-config`, print servlet: `https://localhost/print/default/capabilities.json`
+1. Adapt `MASTERPORTAL_VERSION` in `setup.sh` to your needs, cf. [tags](https://bitbucket.org/geowerkstatt-hamburg/masterportal/src/dev/).
+2. Set your project name in `setup.sh` for the `CONTAINER_NAME_PREFIX` variable.
+3. Run `setup.sh` to set environment variables.
+4. `docker compose build -d`
+5. App runs on `https://localhost/portal/start-config`, print servlet: `https://localhost/print/default/capabilities.json`
 
 ### Production Example
 
